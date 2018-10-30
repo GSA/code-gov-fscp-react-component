@@ -1,0 +1,23 @@
+{
+  "name": "@code.gov/policy-guide",
+  "version": "0.0.0",
+  "description": "Policy Guide Plugin for code-gov-web, built with Markdown and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSA/code-gov-policy-guide.git"
+  },
+  "keywords": [
+    "FSCP",
+    "civic"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/GSA/code-gov-policy-guide/issues"
+  },
+  "homepage": "https://github.com/GSA/code-gov-policy-guide#readme"
+}
