@@ -1,4 +1,4 @@
-## 3 Three-Step Software Solutions Analysis
+## 3. Three-Step Software Solutions Analysis
 
 Agencies must obtain sufficient rights to custom-developed code to fulfill both the Government-wide reuse objectives and the open source release objectives outlined in this policy’s pilot program.
 

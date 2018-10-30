@@ -1,4 +1,4 @@
-## 1 Objectives
+## 1. Objectives
 
 This policy will accomplish the following objectives:
 
