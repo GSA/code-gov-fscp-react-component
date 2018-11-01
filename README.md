@@ -1,5 +1,5 @@
 # code-gov-fscp-react-component
-Policy Guide Plugin for code-gov-web, built with Markdown and React
+FSCP Plugin for code-gov-web, built with Markdown and React
 
 # References:
  - https://github.com/WhiteHouse/source-code-policy
