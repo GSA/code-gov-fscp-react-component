@@ -1,4 +1,4 @@
-# code-gov-policy-guide-react-component
+# code-gov-fscp-react-component
 Policy Guide Plugin for code-gov-web, built with Markdown and React
 
 # References:
