@@ -1,13 +1,13 @@
 {
-  "name": "@code.gov/policy-guide",
-  "version": "0.0.0",
-  "description": "Policy Guide Plugin for code-gov-web, built with Markdown and React",
+  "name": "@code.gov/fscp-react-component",
+  "version": "0.1.0",
+  "description": "FSCP Plugin for code-gov-web, built with Markdown and React",
   "main": "./src/index.js",
   "scripts": {
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GSA/code-gov-policy-guide.git"
+    "url": "git+https://github.com/GSA/code-gov-fscp-react-component.git"
   },
   "keywords": [
     "FSCP",
@@ -16,9 +16,9 @@
   "author": "Daniel J. Dufour",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/GSA/code-gov-policy-guide/issues"
+    "url": "https://github.com/GSA/code-gov-fscp-react-component/issues"
   },
-  "homepage": "https://github.com/GSA/code-gov-policy-guide#readme",
+  "homepage": "https://github.com/GSA/code-gov-fscp-react-component#readme",
   "dependencies": { },
   "devDependencies": { }
 }
