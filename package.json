@@ -1,6 +1,6 @@
 {
   "name": "@code.gov/fscp-react-component",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "FSCP Plugin for code-gov-web, built with Markdown and React",
   "main": "./src/index.js",
   "scripts": {},

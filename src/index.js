@@ -77,6 +77,8 @@ export default class PolicyGuide extends Component {
             <Redirect to={`${this.props.match.url}/introduction`} />
           </Switch>
         </div>
+        <br/>
+        <br/>
       </div>
     )
   }
