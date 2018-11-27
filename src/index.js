@@ -2,11 +2,15 @@
 /* global fetch */
 import React, { Component, Fragment } from 'react'
 import { Link, NavLink, Redirect, Route, Switch } from 'react-router-dom'
+import Breadcrumbs from 'components/breadcrumbs'
 import LazyHTML from 'components/lazy-html'
+import SideNav from 'components/side-nav'
 import SiteBanner from 'components/site-banner'
 import NavSelect from 'components/nav-select'
+import { refreshView, scrollToTopOfResults } from 'utils/other'
 
 const baseurl = PUBLIC_PATH + "assets/plugins/fscp-react-component/"
+const fscpurl = PUBLIC_PATH + 'policy-guide/'
 
 const pages = [
   { display: 'Introduction', route: 'introduction', filename: '0-introduction' },
@@ -23,7 +27,14 @@ const pages = [
 const pagesForSelect = pages.map(({display, route}) => {
   return {
     display: display.replace(/^[0-9]. /g, ''), // remove numbers from front
-    route: PUBLIC_PATH + 'policy-guide/' + route
+    route:  fscpurl + route
+  }
+})
+
+const linksForSideNav = pages.map(({display, route}) => {
+  return {
+    route: route,
+    text: display
   }
 })
 
@@ -33,6 +44,19 @@ const PolicyGuidePage = ({ url }) => {
 
 export default class PolicyGuide extends Component {
 
+  componentDidMount() {
+    refreshView()
+    window.addEventListener('popstate', event => {
+      if (window.location.pathname.startsWith(fscpurl)) {
+        scrollToTopOfResults()
+      }
+    })
+  }
+
+  onNavChange() {
+    scrollToTopOfResults()
+  }
+
   get routes() {
     return pages.map(({ route, filename }) => {
       const path = `${this.props.match.url}/${route}`
@@ -41,36 +65,26 @@ export default class PolicyGuide extends Component {
     })
   }
 
-  get sidenav() {
-    return pages.map(({ display, route }) => (
-      <li key={route}>
-        <NavLink activeClassName="current" to={`${this.props.match.url}/${route}`}>{display}</NavLink>
-      </li>
-    ))
-  }
-
   render() {
-    const matchUrl = this.props.match.url
     return (
       <div>
         <SiteBanner title='Federal Source Code Policy' />
-        <div className="indented">
-          <ul className="breadcrumbs">
-            <li><Link to='/'>Home</Link></li>
-            <li>Federal Source Code Policy</li>
-          </ul>
-        </div>
+        <Breadcrumbs crumbs={[
+          { text: 'Home', to: '/' },
+          { text: 'Federal Source Code Policy' }
+        ]}/>
         <br/>
         <div className="indented">
           <div className="show-w-lte-600" style={{padding: '30px', textAlign: 'center'}}>
             <NavSelect pages={pagesForSelect} />
           </div>
           <div className="width-quarter show-w-gt-600">
-            <nav className="sidebar left">
-              <ul>
-                {this.sidenav}
-              </ul>
-            </nav>
+            <SideNav
+              alignment='left'
+              baseurl={fscpurl}
+              links={linksForSideNav}
+              onLinkClick={::this.onNavChange}
+            />
           </div>
           <Switch>
             {this.routes}
