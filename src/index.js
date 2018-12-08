@@ -78,7 +78,7 @@ export default class PolicyGuide extends Component {
           <div className="show-w-lte-600" style={{padding: '30px', textAlign: 'center'}}>
             <NavSelect pages={pagesForSelect} />
           </div>
-          <div className="width-quarter show-w-gt-600">
+          <div className="width-quarter show-w-gt-600 sticky">
             <SideNav
               alignment='left'
               baseurl={fscpurl}
