@@ -51,6 +51,13 @@ export default class PolicyGuide extends Component {
         scrollToTopOfResults()
       }
     })
+    this.pathname = this.props.location.pathname
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const changed = nextProps.location.pathname !== this.pathname
+    this.pathname = nextProps.location.pathname
+    return changed
   }
 
   onNavChange() {
