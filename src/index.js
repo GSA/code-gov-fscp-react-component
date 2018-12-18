@@ -38,8 +38,23 @@ const linksForSideNav = pages.map(({display, route}) => {
   }
 })
 
+const scrollToHash = () => {
+  const hash = window.location.hash
+  if (hash) {
+    const id = hash.replace("#","")
+    if (id) {
+      console.log(`scrolling to element with id "${id}"`)
+      document.getElementById(id).scrollIntoView()
+    }
+  }
+}
+
 const PolicyGuidePage = ({ url }) => {
- return <div className="docs-content"><LazyHTML url={url}/></div>
+ return (
+    <div className="docs-content">
+      <LazyHTML url={url} onUpdate={scrollToHash}/>
+    </div>
+  )
 }
 
 export default class PolicyGuide extends Component {
@@ -51,6 +66,13 @@ export default class PolicyGuide extends Component {
         scrollToTopOfResults()
       }
     })
+    this.pathname = this.props.location.pathname
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const changed = nextProps.location.pathname !== this.pathname
+    this.pathname = nextProps.location.pathname
+    return changed
   }
 
   onNavChange() {
