@@ -49,7 +49,7 @@ const scrollToHash = () => {
   }
 }
 
-const PolicyGuidePage = ({ url }) => {
+export const PolicyGuidePage = ({ url }) => {
  return (
     <div className="docs-content">
       <LazyHTML url={url} onUpdate={scrollToHash}/>
