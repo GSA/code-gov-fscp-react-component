@@ -1,3 +1,6 @@
+# DEPRECATED 
+## This project repo is no longer being maintained. The Federal Source Code Policy is no longer on code.gov but can be found at [sourcecode.cio.gov](https://sourcecode.cio.gov/)
+
 # code-gov-fscp-react-component
 FSCP Plugin for code-gov-web, built with Markdown and React
 
